@@ -1,0 +1,598 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <!-- Required meta tags -->
+    
+<meta charset="utf-8" />
+    
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+	
+	<!-- fontawesome	-->
+	<link rel="stylesheet" href="resources/plugins/fontawesome-5.15.3-web/css/all.css" />
+	
+	<!-- nice-select	-->
+	<link rel="stylesheet" href="resources/plugins/nice-select/css/nice-select.css" />
+	
+	<!-- burger menu animation	-->
+	<link rel="stylesheet" href="resources/plugins/burger.css" />
+	
+	<!-- owlcarousel	-->
+	<link rel="stylesheet" href="resources/plugins/owlcarousel/owl.carousel.min.css" />
+	<link rel="stylesheet" href="resources/plugins/owlcarousel/owl.theme.default.min.css" />
+	
+    
+        <link rel="stylesheet" href="resources/Style/style.css"/>
+        <link rel="stylesheet" href="resources/Style/responsive.css"/>
+	
+    
+<title>Matrix Bilişim</title>
+  </h:head>
+  <h:body>
+<header class="mb-4">
+
+
+
+
+            <div class="header-top">
+
+                <div class="container"> 
+
+                    <div class="row align-items-center">
+
+                        <div class="col-12 col-lg-6 text-center text-lg-left">
+
+                            <p class="mb-0">
+                                <span class="text-danger">''Matrix Bilişim ''</span> Online Alışveriş Sitesine Hoşgeldiniz!
+                            </p>
+                        </div>
+
+                        <div class="col-12 col-lg-6 text-center text-right">
+
+                            <ul class="list-inline mb-0">
+
+                                <li class="list-inline-item"><a href="#"><i class="far fa-mobile" />  (0544)444 44 44 </a></li> 
+
+                                <li class="list-inline-item"><a href="#"><i class="far fa-headphones" />  Destek  </a></li>
+
+                                <li class="list-inline-item">
+                                    <span>Uygulama İndir </span> &nbsp;
+                                    <a href="#"><i class="fab fa-windows" /></a>
+                                    <a href="#"><i class="fab fa-apple" /></a>
+                                    <a href="#"><i class="fab fa-android" /></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>	
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+
+                <div class="container">
+                    <a href="#" class="navbar-brand"><img src="resources/images/logo.jpg" alt="" /></a>
+                    <button id="menuButton" class="navbar-toggler menu-button" type="button" data-toggle="collapse" data-target="#mynavbar">
+                        <span class="burger-icon" />
+                    </button>
+
+                    <div id="mynavbar" class="navbar-collapse collapse">
+
+                        <div class="container-fluid py-3">
+
+                            <div class="row">
+
+                                <div class="col-lg-8 px-5">
+
+                                    <div class="searchbox">
+                                        <h:form>
+
+                                            <div class="input-group">
+                                                <h:inputText style="width: 300px;" styleClass="inputbox" value="#{productController.filter}"/>
+                                                <div class="input-group-prepend">
+                                                    <select id="niceselect" class="rounded-0">
+
+                                                        <option>Kategoriler</option>
+
+                                                        <option>Bilgisayar</option>
+
+                                                        <option>Tablet</option>
+
+                                                        <option>Telefon</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="input-group-prepend">
+                                                    <h:form>           
+                                                        <h:commandButton class="btn btn-dark" action="#{productController.filter()}" value="Ara"/><i class="fa fa-search"></i>
+				
+                                                    </h:form>
+                                                </div>
+                                            </div>
+                                        </h:form>
+                                    </div>	
+                                </div>
+
+                                <div class="col-12 col-lg-4 text-center text-lg-right mt-3 mt-lg-0">
+
+                                    <ul class="list-inline mb-0">
+
+                                        <li class="list-inline-item top-user dropdown">
+                                             <a href="#" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown">
+                                                <img class="top-user-img" src="resources/images/user.jpg" alt="" />
+                                                <strong>#{customer.name}</strong>
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-right rounded-0 ">
+                                                <a class="dropdown-item" href="profil2.xhtml"><i class="fas fa-user" /> Profilim </a>
+                                                <a class="dropdown-item" href="#"><i class="fas fa-map-marker-alt" /> Adresim </a>
+                                                <a class="dropdown-item" href="#"><i class="fas fa-heart" /> Favori Listem <span class="badge badge-success">6</span> </a>
+                                                <a class="dropdown-item" href="MyOrders.xhtml"><i class="fas fa-list" /> Sipariş Listem </a>
+                                                <a class="dropdown-item" href="MyOrders.xhtml"><i class="fas fa-truck" /> Sipariş Durumu </a>
+
+                                                <div class="dropdown-divider" />
+                                                <a class="dropdown-item" href="index2.xhtml"><i class="fas fa-out" /> Çıkış </a>
+                                            </div>
+                                        </li>
+
+                                        <li class="list-inline-item top-cart dropdown">
+                                            <a href="#" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown">
+                                                <i class="fa fa-shopping-cart" /> Kart
+                                                <small class="cart-value bg-danger">02</small>
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-right p-3 rounded-0">
+
+                                                 <h:form>
+           
+           <h:dataTable  class="table" value="#{orderItemsController.cartItem}" var="p">
+                <h:column>
+                    <f:facet name="header">MARKA</f:facet>
+                    #{p.brand}
+                </h:column>
+               <h:column>
+                    <f:facet name="header">İSİM</f:facet>
+                    #{p.name}
+                </h:column>
+                
+            </h:dataTable>
+        </h:form>
+                                                
+                                                 <h:form>
+                                                                         <h:commandButton class="btn btn-primary btn-block mt-3" action="MyCart1" value="Sepete Git"/>
+
+                                                 </h:form>
+                                            </div>
+                                        </li>
+                                    </ul>	
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <nav class="navbar navbar-expand-lg bg-dark navbar navbar-dark">
+
+                <div class="container">
+
+                    <div class="navbar-collapse collapse" id="navbar-second">
+
+                        <ul class="navbar-nav">
+
+                            <li class="navbar-item dropdown">
+						<a href="anasayfa2.xhtml" class="nav-link" ><i class="fas fa-home"></i> ANASAYFA</a>
+													
+						
+					</li>
+                         
+
+                            <li class="nav-item dropdown mega-dropdown-main">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">BİLGİSAYAR</a>
+
+                                <div class="dropdown-menu mega-dropdown">
+
+                                    <div class="row no-gutters">
+
+                                        <div class="col-12 col-sm-6 col-md-3">
+
+                                            <div class="mega-list">
+                                                <a class="mega-title" href="#">NOTEBOOK<span class="badge badge-danger">Yeni</span></a>
+                                                <a href="#">Asus</a>
+                                                <a href="#">Lenovo</a>
+                                                <a href="#">Msi &amp; <span class="badge badge-warning">%35 indirim</span></a>
+                                                <a href="#">Hp</a>
+                                                <a class="mega-title" href="#">MASAÜSTÜ</a>
+                                                <a href="#">Monitör</a>
+                                                <a href="#">Kasa<span class="badge badge-info">new</span></a>
+                                                <a href="#">Klavye</a>
+                                                <a href="#">Mouse</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-sm-6 col-md-3 d-none d-sm-block">
+                                            <a href="#"><img class="img-fluid" src="resources/images/pc.jpg" alt="Bannar 1" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown mega-dropdown-main">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">TABLET</a>
+
+                                <div class="dropdown-menu mega-dropdown">
+
+                                    <div class="row no-gutters">
+
+                                        <div class="col-12 col-sm-6 col-md-3">
+
+                                            <div class="mega-list">
+                                                <a class="mega-title" href="#">TABLET<span class="badge badge-secondary">%40</span></a>
+                                                <a href="#">Samsung<span class="badge badge-warning">%15 indirim</span></a>
+                                                <a href="#">Lenovo</a>
+                                                <a href="#">Apple<span class="badge badge-primary">%20 indirim</span></a>
+                                                <a href="#">Huawei</a>
+                                                <a href="#">Xiaomi<span class="badge badge-info"> new</span></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-sm-6 col-md-3 d-none d-sm-block">
+                                            <a href="#"><img class="img-fluid" src="resources/images/tablet.jpg" alt="Bannar 1" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown mega-dropdown-main">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="true">TELEFON</a>
+
+                                <div class="dropdown-menu mega-dropdown">
+
+                                    <div class="row no-gutters">
+
+                                        <div class="col-12 col-sm-6 col-md-3">
+
+                                            <div class="mega-list">
+                                                <a class="mega-title" href="#">TELEFON<span class="badge badge-success">Stokta</span></a>
+                                                <a href="#">Samsung</a>
+                                                <a href="#">Lenovo</a>
+                                                <a href="#">Apple</a>
+                                                <a href="#">Huawei<span class="badge badge-light">%50 indirim</span></a>
+                                                <a href="#">Xiaomi</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-sm-6 col-md-3 d-none d-sm-block">
+                                            <a href="#"><img class="img-fluid" src="resources/images/telefon.jpg" alt="Bannar 1" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+ 
+ <div class="container">
+	<div class="row no-gutters">
+		<div class="col-12 col-sm-6 col-md-3">
+			<img class="top-user-img-profile" src="resources/images/user2.png" alt="" />
+			<span class="badge badge-primary" style="font-size:15px">#{customer.name} #{customer.lastName} </span>
+			<p>&ensp;</p>
+			<a href="MyOrders.xhtml" class="btn btn-outline-dark">
+				<i class="fa fa-shopping-basket" aria-hidden="true"><strong>   Siparişlerim</strong></i>
+			</a>
+			<p>&ensp;</p>
+			<a href="#" class="btn btn-outline-dark " data-toggle="dropdown">
+				<i class="fa fa-credit-card" aria-hidden="true"><strong>   Cüzdanım</strong></i>
+			</a>
+			<p>&ensp;</p>
+			<a href="#" class="btn btn-outline-dark " data-toggle="dropdown">
+				<i class="fa fa-life-ring" aria-hidden="true"><strong>   Destek Taleplerim</strong></i>
+			</a>
+			<p>&ensp;</p>
+			<a href="#" class="btn btn-outline-dark " data-toggle="dropdown">
+				<i class="fa fa-comments" aria-hidden="true"><strong>    Değerlendirmelerim</strong></i>
+			</a>
+			<p>&ensp;</p>
+			<a href="#" class="btn btn-outline-dark " data-toggle="dropdown">
+				<i class="fa fa-gift" aria-hidden="true"><strong>   Hediye Çeklerim</strong></i>
+			</a>
+			<p>&ensp;</p>
+		</div>
+		<div class="">
+			
+                     
+                    
+                    
+                    
+                    <div class="container">
+        <div class="row ">
+            <div class="">
+                <h:form>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md3">
+                                    <h3><span class="fas fa-user fa-2x"></span></h3>
+                                </div>
+                                <div class="col-md-9 text-right">
+                                    <h2>Profil Bilgileri</h2>
+                                    
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <h:form>
+                        <div class="card-body">
+                            <div class="form-group">
+                                ISIM<br/>
+                                
+                                <h:inputText   value="#{customer.name}"
+                                                  required="true"
+                                                   />
+                                
+                            </div>
+                            <div class="form-group">
+                                SOYISIM<br/>
+                               
+                                <h:inputText  value="#{customer.lastName}"
+                                                  required="true"
+                                                   />
+
+                                
+                                
+                            </div>
+                            <div class="form-group">
+                                EMAIL<br/>
+                                
+                                <h:inputText   value="#{customer.email}"
+                                                  required="true"
+                                                   /> 
+
+                               
+                                
+                            </div>
+                            <div class="form-group">
+                                SIFRE<br/>
+                                
+                                <h:inputText   value="#{customer.password}"
+                                                  required="true"
+                                                   /> 
+
+                               
+                                
+                            </div>
+                            <div class="form-group">
+                                ADRES<br/>
+                                
+                                <h:inputText   value="#{customer.address}"
+                                                  required="true"
+                                                   /> 
+
+                            </div>
+                            <div class="form-group">
+                                TELEFON<br/>
+                                
+                                <h:inputText   value="#{customer.phoneNumber}"
+                                                  required="true"
+                                                   /> 
+
+                            </div>
+                            <div class="form-group">
+                                SEHIR<br/>
+                                
+                                <h:inputText   value="#{customer.city}"
+                                                  required="true"
+                                                   /> 
+
+                            </div>
+                            
+                                
+                            </div>
+                        
+                </h:form>
+                        <div class="card-footer text-muted btn btn-warning">
+                           
+                            <h:commandButton class="btn bg-success" type="submit" value="Bilgileri Güncelle" action="#{customer.updateCustomer()}" />
+                            
+                            
+
+
+                        </div>
+                         <div class="card-footer text-muted btn btn-light">
+                            Matrix Bilişim Müşteri Bilgileri Güncelleme Ekranı
+                        </div>
+                        
+                    </div>
+                                
+                    
+                </h:form>   
+                
+            </div>
+        </div>
+    </div>
+                 
+            </div>		
+    </div>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+         <!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <!-- Section: Social media -->
+  <section
+    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+  >
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Sosyal medya Hesaplarımız:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h5 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Matrİx Bİlİşİm A.Ş.
+          </h5>
+		  <h6 class="text-uppercase fw-bold mb-4">
+            -Hakkımızda-
+          </h6>
+          <p>
+			Enes ERGEN   info@enesergen.com  
+			</p>
+			<p>
+			Akın GÜRLER  info@akıngurler.com  
+			</p>
+			<p>
+			Özcan UNCU   info@ozcanuncu.com			
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Ödeme seçeneklerİ
+          </h6>
+          <p>
+			<i class="fa fa-cc-visa">Visa</i>
+          </p>		  
+          <p>           
+			<i class="fa fa-cc-paypal" aria-hidden="true">PayPal</i>			
+          </p>
+          <p>
+            
+			<i class="fa fa-cc-mastercard" aria-hidden="true">MasterCard</i>
+          </p>          
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Yararlı Lİnkler
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Satışlar</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Teklifler</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Ayarlar</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Yardım</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            İletİşİm
+          </h6>
+          <p><i class="fas fa-home me-3"></i> İstanbul Üniversitesi, Avcılar/İstanbul, Turkey</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            info@matrixbilisim.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 90 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 90 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2021 Copyright: <h:form>
+                                                <h:commandButton class="btn bg-success"  action="adminLogin" value="ADMIN PANEL"/>
+
+                            </h:form>
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MatrixBilisim.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+ 
+ 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	<!-- nice select -->
+	
+<script src="resources/plugins/nice-select/js/jquery.nice-select.js"></script>
+	<!-- site.js -->
+	
+        <script src="resources/Style/site.js"></script>
+	        
+
+	<!-- owlcarousel -->
+	
+<script src="resources/plugins/owlcarousel/owl.carousel.min.js"></script>
+	
+	
+  
+</h:body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>TeknoMarkt</title>
+        <h:outputStylesheet library="css" name="bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="resources/Style/main.css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link rel="stylesheet" href="resources/font-awesome-4.7.0/css/font-awesome.min.css"/>
+
+    </h:head>
+    <body>
+         
+       <h:form class="form-control">
+            Customer ID: <h:inputText value="#{customerController.customer.customerId}"/><br/>
+            E-mail:<h:inputText value="#{customerController.customer.email}"/><br/>
+            Password:<h:inputText value="#{customerController.customer.password}"/><br/>
+            Name: <h:inputText value="#{customerController.customer.name}"/><br/>
+            Last Name: <h:inputText value="#{customerController.customer.lastName}"/><br/>
+            Phone Number: <h:inputText value="#{customerController.customer.phoneNumber}"/><br/>
+            Sex: <h:inputText value="#{customerController.customer.sex}"/><br/>
+            City: <h:inputText value="#{customerController.customer.city}"/><br/>
+            Address: <h:inputText value="#{customerController.customer.address}"/><br/>
+           
+
+            <h:commandButton action="#{customerController.update()}" value="Bilgileri Güncelle"/>
+        </h:form>
+        
+    </body>
+</html>

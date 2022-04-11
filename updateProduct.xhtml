@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>TeknoMarkt</title>
+        <h:outputStylesheet library="css" name="bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="resources/Style/main.css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link rel="stylesheet" href="resources/font-awesome-4.7.0/css/font-awesome.min.css"/>
+
+    </h:head>
+    <body>
+         
+        
+        <div class="container">
+            <div class="row my-4">
+                <div class="col-md-4 offset-md-4 my-4">
+                    <h:form>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="row">
+                                    
+                                    <div class="col-md-12 text-right">
+                                        <h2>MATRIX ÜRÜN EKLEME</h2>
+                                        <small>Lütfen Ürün Bilgilerini giriniz...</small>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="card-footer text-muted btn btn-light">
+                                <ul class="list-group"><h3>Category ID</h3>
+                                    <li class="list-inline-item">1->Bilgisayar</li>
+                                    <li class="list-inline-item">2->Tablet</li>
+                                    <li class="list-inline-item">3->Telefon</li>
+
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    Category ID<br/>
+                                    <h:inputText  styleClass="inputbox" id="catid" value="#{productController.product.categoryId}"
+                                                  required="true"/>
+                                </div>
+                                <div class="form-group">
+                                    Stock<br/>
+                                    <h:inputText  styleClass="inputbox" id="stock" value="#{productController.product.stock}"
+                                                  required="true"/>
+                                </div>
+                                 <div class="form-group">
+                                    Marka<br/>
+                                    <h:inputText  styleClass="inputbox" id="brand" value="#{productController.product.brand}"
+                                                  required="true"/>
+                                </div>
+                                 <div class="form-group">
+                                    İsim<br/>
+                                    <h:inputText  styleClass="inputbox" id="name" value="#{productController.product.name}"
+                                                  required="true"/>
+                                </div>
+                                 <div class="form-group">
+                                    Açıklama<br/>
+                                    <h:inputText  styleClass="inputbox" id="desc" value="#{productController.product.description}"
+                                                  required="true"/>
+                                </div>
+                                <div class="form-group">
+                                    Resim No<br/>
+                                    <h:inputText  styleClass="inputbox" id="imgr" value="#{productController.product.imgUrl}"
+                                                  required="true"/>
+                                </div>
+                                <div class="form-group">
+                                    Fiyat<br/>
+                                    <h:inputText  styleClass="inputbox" id="price" value="#{productController.product.price}"
+                                                  required="true"/>
+                                </div>
+                                
+                                
+                                
+                            </div>
+                            <div class="card-footer text-muted btn btn-warning">
+                              
+                                <h:commandButton class="btn bg-success" type="submit" value="Bilgileri Güncelle" action="#{productController.update()}" />
+
+                            </div>
+                            
+
+                        </div>
+
+
+                    </h:form>   
+
+                </div>
+            </div>
+        </div>
+        
+      
+        <!-- comment
+        <h:form class="form-control">
+            CategoryId: <h:inputText value="#{productController.product.categoryId}"/><br/>
+            Stock: <h:inputText value="#{productController.product.stock}"/><br/>
+            Brand: <h:inputText value="#{productController.product.brand}"/><br/>
+            Name: <h:inputText value="#{productController.product.name}"/><br/>
+            Description: <h:inputText value="#{productController.product.description}"/><br/>
+            ImgUrl: <h:inputText value="#{productController.product.imgUrl}"/><br/>
+            Price: <h:inputText value="#{productController.product.price}"/><br/>
+            Counter: <h:inputText value="0"/><br/>
+            Point: <h:inputText value="0"/><br/>
+
+            <h:commandButton class="btn btn-dark" action="#{productController.update()}" value="ürün Güncelle"/>
+        </h:form>
+         -->
+    </body>
+</html>

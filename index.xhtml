@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TeknoMarkt</title>
+        <h:outputStylesheet library="css" name="bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="resources/Style/main.css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link rel="stylesheet" href="resources/font-awesome-4.7.0/css/font-awesome.min.css"/>
+
+    </h:head>
+    <h:body>
+
+        
+        
+        
+        
+        
+        <h:form>
+                        <h:commandButton class="btn bg-info"  action="index2" value="İndex2"/>
+
+        </h:form>
+
+        
+       
+        
+        <h:form>
+            <p class="text-center">
+                Product Nesnesi Genel CRUD Operasyon Kodları
+                ***Admin Kısmı İçin
+            </p>
+
+            <h:commandButton class="btn bg-dark btn-secondary "  action="createProduct" value="ürün ekle"/>
+              <h:commandButton class="btn bg-info"  action="bilgiler" value="Müşteriler"/>
+              
+
+        </h:form>
+        <hr/>
+        <h:form>
+
+            <h:dataTable  class="table" value="#{productController.productList}" var="p">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                        #{p.productId}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Category Id</f:facet>
+                        #{p.categoryId}
+                </h:column>           
+                <h:column>
+                    <f:facet name="header">Stock</f:facet>
+                        #{p.stock}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Brand</f:facet>
+                        #{p.brand}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Name</f:facet>
+                        #{p.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Description</f:facet>
+                        #{p.description}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Img Url</f:facet>
+                        #{p.imgUrl}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Price</f:facet>
+                        #{p.price}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Counter</f:facet>
+                        #{p.counter}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Point</f:facet>
+                        #{p.point}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Date</f:facet>
+                        #{p.date}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Admin</f:facet>
+                    <h:commandButton class="btn btn-secondary" action="#{productController.updateForm(p)}" value="Update"/>
+                    <h:commandButton class="btn btn-danger" action="#{productController.delete(p)}" value="Delete" />
+                </h:column>
+            </h:dataTable>
+        </h:form>
+
+        <hr/><br/><br/><br/>
+
+        <p class="text-center">
+            OrderItems Nesnesi Genel CRUD Operasyon Kodları
+            ***Customer Icın
+            Ürünleri sepete ekleme
+        </p>
+
+
+
+        <h:form>
+            <h:dataTable  class="table" value="#{productController.productList}" var="p">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                        #{p.productId}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Category Id</f:facet>
+                        #{p.categoryId}
+                </h:column>           
+                <h:column>
+                    <f:facet name="header">Stock</f:facet>
+                        #{p.stock}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Brand</f:facet>
+                        #{p.brand}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Name</f:facet>
+                        #{p.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Description</f:facet>
+                        #{p.description}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Img Url</f:facet>
+                        #{p.imgUrl}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Price</f:facet>
+                        #{p.price}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Counter</f:facet>
+                        #{p.counter}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Point</f:facet>
+                        #{p.point}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Date</f:facet>
+                        #{p.date}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Admin</f:facet>
+                    <h:commandButton class="btn btn-secondary" action="#{orderItemsController.addToCard(p)}" value="Sepete Ekle"/>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+
+        <h:form >
+            <h:commandButton class="btn btn-primary" action="myCart" value="sepeti göster"/>
+            <br/><br/><br/><br/>
+
+        </h:form>
+
+         <hr/><br/><br/><br/>
+
+        <p class="text-center">
+           Order Nesnesi Kontrol İşlemleri 
+            ***Admin ve Customer Ortak yerine göre butonlar değişebilir. Icın
+            Sipariş görme sonra ayrıntılı olarak ürünleri görme
+        </p>
+         
+         <h:form>
+             <h:dataTable  class="table" value="#{orderController.fillArray()}" var="o">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                        #{o.orderId}
+                </h:column>
+                 <h:column>
+                    <f:facet name="header">Customer ID</f:facet>
+                        #{o.customerId}
+                </h:column>
+                 <h:column>
+                    <f:facet name="header">OrderStatus</f:facet>
+                        #{o.orderStatus}
+                </h:column>
+                 <h:column>
+                    <f:facet name="header">Date</f:facet>
+                        #{o.date}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Ayrıntı</f:facet>
+                    <h:commandButton class="btn btn-info" action="#{orderController.orderDetail(o.orderId)}" value="Sipariş Ayrıntısı"/>
+                </h:column>
+              </h:dataTable>
+         </h:form>
+
+         
+         <a href="deneme.xhtml">ASASS</a>
+
+         
+         
+         
+         
+         
+    </h:body>
+
+    
+    
+    
+</html>
+
